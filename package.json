@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "skills_md_work",
   "version": "1.0.0",
   "description": "Immutable, swarm-native skill registry.",
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/bitcoreos/skills.md#readme",
   "devDependencies": {
+    "ajv-cli": "^5.0.0",
     "eslint": "^9.39.2"
   },
   "dependencies": {
