@@ -14,110 +14,107 @@ jobs:
   hash:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Verify SHA-256 of code bodies
+      - uses: actions/checkout@v4
+      - name: Verify SHA-256
         run: |
+          chmod +x scripts/hash-verifier.sh
           for f in sources/**/*.js; do
-            ./scripts/hash-verifier.sh "$f"
+            ./scripts/hash-verifier.sh "f"
           done
 
   gpg:
     runs-on: ubuntu-latest
     needs: hash
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Import public key
         run: gpg --import public-key.asc
       - name: Verify signatures
         run: |
           for f in sources/**/*.js; do
-            # front-matter
-            yaml=$(awk '/^---$/{if(++c==2)exit} {if(c==1)print}' "$f")
-            # code body
-            code=$(awk '/^---$/{c++;next} c==1' "$f")
-            # extract the clearsigned block after the “signature:” key
-            sig=$(echo "$yaml" | awk '/^signature:/ {flag=1; next} flag && !/^---$/')
-            echo "$code" | gpg --verify <(echo "$sig")
+            yaml=(awk '/^---$/{if(++c==2)exit} {if(c==1)print}' "f")
+            code=(awk '/^---$/{c++;next} c==1' "f")
+            sig=(echo "yaml" | awk '/^signature:/ {flag=1; next} flag && !/^---$/')
+            echo "code" | gpg --verify <(echo "sig")
           done
 
   schema:
     runs-on: ubuntu-latest
     needs: gpg
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Install AJV
         run: npm install -g ajv-cli
-      - name: Validate front-matter against schema
+      - name: Validate Schema
         run: |
           for f in sources/**/*.js; do
-            yaml=$(awk '/^---$/{if(++c==2)exit} {if(c==1)print}' "$f")
-            echo "$yaml" | ajv validate -s schemas/skill.schema.json -d -
+            yaml=(awk '/^---$/{if(++c==2)exit} {if(c==1)print}' "f")
+            echo "yaml" | ajv validate -s schemas/skill.schema.json -d -
           done
 
   spdx:
     runs-on: ubuntu-latest
     needs: schema
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Install SPDX checker
         run: pip install spdx-license-checker
-      - name: Run SPDX validator
+      - name: Run Validator
         run: python scripts/spdx-validator.py
 
   index:
     runs-on: ubuntu-latest
     needs: spdx
     steps:
-      - uses: actions/checkout@v3
-      - name: Build /swarm/index.json
+      - uses: actions/checkout@v4
+      - name: Build Index
         run: go run ./scripts/swarm-indexer.go
 
   lint:
     runs-on: ubuntu-latest
     needs: index
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Install linters
-        run: |
-          npm install -g eslint prettier
-      - name: ESLint (zero warnings)
+        run: npm install -g eslint prettier
+      - name: ESLint
         run: eslint sources/**/*.js --max-warnings=0
-      - name: Prettier check
+      - name: Prettier
         run: prettier --check sources/**/*.js
 
- embed:
-  runs-on: ubuntu-latest
-  needs: index
-  steps:
-  - uses: actions/checkout@v3
-  - name: Set up Python
-    uses: actions/setup-python@v4
-    with:
-      python-version: '3.10'
-  - name: Install dependencies
-    run: pip install fastembed
-  - name: Generate Embeddings
-    run: python scripts/skill-embedder.py
-  - name: Upload Artifact
-    uses: actions/upload-artifact@v3
-    with:
-      name: embeddings
-      path: swarm/embeddings.json
+  embed:
+    runs-on: ubuntu-latest
+    needs: index
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: pip install fastembed
+      - name: Generate Embeddings
+        run: python scripts/skill-embedder.py
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: embeddings
+          path: swarm/embeddings.json
 
   deploy:
     runs-on: ubuntu-latest
     needs: [lint, embed]
     if: github.ref == 'refs/heads/main'
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup Pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v4
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./site
           destination: ./_site
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
