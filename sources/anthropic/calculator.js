@@ -22,4 +22,4 @@ signature: |
   =qeKH
   -----END PGP SIGNATURE-----
 ---
-export function calculate(expr) { try { return eval(expr.replace(/[^0-9+\-*/().]/g, '')); } catch(e) { return 'Error'; } }
+export function calculate(expr) { try { return eval(expr.replace(/[^0-9+\-*/().]/g, '')); } catch { return 'Error'; } }

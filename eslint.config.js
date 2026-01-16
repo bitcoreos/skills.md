@@ -8,10 +8,10 @@ export default [
  plugins: {
  frontmatter
  },
- processor: "frontmatter/frontmatter"
+ // The plugin exports processors with file extension keys
+ processor: frontmatter.processors[".js"]
  },
  {
- // Global ignores if needed
  ignores: ["node_modules/", "dist/"]
  }
 ];
