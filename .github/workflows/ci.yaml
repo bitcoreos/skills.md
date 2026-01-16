@@ -30,13 +30,7 @@ jobs:
       - name: Import public key
         run: gpg --import public-key.asc
       - name: Verify signatures
-        run: |
-          for f in sources/**/*.js; do
-            yaml=(awk '/^---$/{if(++c==2)exit} {if(c==1)print}' "f")
-            code=(awk '/^---$/{c++;next} c==1' "f")
-            sig=(echo "yaml" | awk '/^signature:/ {flag=1; next} flag && !/^---$/')
-            echo "code" | gpg --verify <(echo "sig")
-          done
+        run: python3 scripts/gpg-verifier.py
 
   schema:
     runs-on: ubuntu-latest
