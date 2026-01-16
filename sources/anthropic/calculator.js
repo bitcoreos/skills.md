@@ -3,7 +3,24 @@ id: anthropic.calculator
 spdx-id: MIT
 origin: https://github.com/anthropics/anthropic-cookbook
 hash: sha256:917ef6c93a50ef027f2ab913910110ab4a579620807c15db149bfe3b20158407
-signature: -----BEGIN PGP SIGNATURE-----
+signature: |
+  -----BEGIN PGP SIGNATURE-----
+  
+  iQIzBAABCgAdFiEEZ8U4LAM6MxGSR9xCicnEBsaHU18FAmlplqgACgkQicnEBsaH
+  U1++Jw//cJ5W/kZumJ3zBNVNSlmQhg15Mna+PhaJGqrXP1r/geUDkvtKWSswXFGZ
+  O2tZlpe2ZRIk4wI6Zgcxye0ePbc9f+sVLSJEkfT9YOElzyDAcrYEYjFJyScvtXvh
+  Fin/LTbqCP+7XqfpeXKX9aNCaK9RJaoGrJCnavuRMIcKWy9zkfHUPu8LDOYt0yN2
+  MPKAn572vKU7xw89skAFrc2jSh4NaqmBUBvGAaVm+ZZU1qjL2j+N/3VHX7KOwAnx
+  kJl2KqgiAMW0l1fxbQeyMoZK3iEOLlrL9Jm0PbDZsVdWBIpYEmJ8JV0qGfPfoq4z
+  Zs4/TIebzq0xJrIAja4P/fcKkOmCoABQZzrEHjzuQ/Fn2/QywF805QS+HDM3ypay
+  0v7N/nehKe3lhCE6yGjj7/b7GS1Tl/6ZXpgPFIathD3lcCURLMMHidYQnnXLmWzq
+  4pjOagxo6ZjeYxwnEjf4YmzB3E7CREt3BkE+g4aOjBjcB95b1vbVGIf6zziScfc1
+  mURhEbfaMp1nO+xGWJi+rRQYLiY5f/MEw7Yptlg7NhNJT5xzlU+G9qHSrOZkTnst
+  hXkpuak+4nCmNF2NkgJnJEM+DoE/hdrbEqDYG0qObXfzDkciN/ZkcOLBRXHIV4l8
+  AzUzlLcty8rXCYY0tyZ99vrVKVv+3KHjLup3K/7kIQ/bfIFjpA8=
+  =giOO
+  -----END PGP SIGNATURE-----
+---
 
 iQIzBAABCgAdFiEEZ8U4LAM6MxGSR9xCicnEBsaHU18FAmlplJMACgkQicnEBsaH
 U18GyRAAq+y18KQX2uqiEsyyWP5+lPusxUePzpZWJzwnD4Hzyubrq2l+AoPeDKvK
