@@ -7,6 +7,7 @@
     "@eslint/js": "^9.39.2",
     "ajv-cli": "^5.0.0",
     "eslint": "^9.0.0",
+    "eslint-plugin-frontmatter": "^0.0.8",
     "globals": "^15.0.0",
     "prettier": "^3.0.0"
   }

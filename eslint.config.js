@@ -1,18 +1,17 @@
 import js from "@eslint/js";
-import globals from "globals";
+import frontmatter from "eslint-plugin-frontmatter";
 
 export default [
-    js.configs.recommended,
-    {
-        languageOptions: {
-            globals: {
-                ...globals.browser,
-                ...globals.node
-            }
-        },
-        rules: {
-            "no-unused-vars": "warn",
-            "no-undef": "error"
-        }
-    }
+ js.configs.recommended,
+ {
+ files: ["**/*.js"],
+ plugins: {
+ frontmatter
+ },
+ processor: "frontmatter/frontmatter"
+ },
+ {
+ // Global ignores if needed
+ ignores: ["node_modules/", "dist/"]
+ }
 ];
