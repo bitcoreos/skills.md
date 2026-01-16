@@ -21,22 +21,22 @@ version: 1.0.0
   =qeKH
   -----END PGP SIGNATURE-----
 signature: |
-    -----BEGIN PGP SIGNATURE-----
-    
-    iQIzBAABCgAdFiEEZ8U4LAM6MxGSR9xCicnEBsaHU18FAmlqQKQACgkQicnEBsaH
-    U18XhQ/8Dg/3mVZFs5z5+ZApsdb/4FA8hRicH6+HDMav95z07rOyFpXj4EKWYx95
-    AachPd26eFNw2/PyvefMtTD5IoSj1IU4CTdQUIyk1a6TKfRKVBwf7BBrg4gul57o
-    cO7l512NuYurC4KfgbIn5U3Q+UtrInOhb1xJ9P85VwfswbDMws8SRdAnJlqZKZA5
-    Uw/d9+9lPUOywR+ArJxLZ+8wJHWdXTCWeckpZeAewwczqc5IWWv6+BPHgRKEbqYc
-    JESvpI+IVZ76upHt41beTz/SPy2XbB3Cieuf05pbBm4nPpTykvn2Ys+/Nfdl/lk3
-    8iavJ8uxVmrez5wGShm33we7qLTD5kREQ3KMWbCD2ObqZdBiSxRcPAh7BD/tipgC
-    6cXRwZa+qeD3KOODD0SYz1xO4YRM57K6zwVlJSAWfCGyK5oacIi/GYPYCx7zjI7f
-    mj++oe/OLiOsHrefgYm3E4ARcZHz6qVHsU2dcTCEAmZ3qTn0+jDFos2BcA+6pe3G
-    VrCsvkKjIFycDF8p0I3yE9bIkam1pxj000mymjpw7NSudeK6/azACki/e/WoSm1W
-    oMEO/GZJ814Iz1ZbQXn7DMK2CWhwMmmvOWV7z/11q/GFaGDDWxh7VkPkZ9sViQGu
-    l6VsS4rTiCv2AObxOrQPe7ZGEkhU4kF9mXvyyrDgrPBPEq0ZUUI=
-    =Mxbr
-    -----END PGP SIGNATURE-----
+ -----BEGIN PGP SIGNATURE-----
+ 
+ iQIzBAABCgAdFiEEZ8U4LAM6MxGSR9xCicnEBsaHU18FAmlqRR0ACgkQicnEBsaH
+ U1+DIg//esjTwjrgqYTQggAznQPb/45UPggEWAxpgrSj6Td97sgaUEnePsmHNSyp
+ kxlNyBrAuzpEnpH913e9ERcA6tLJAMkpXSk0u3kFsqYFv/BVZIRktvs2QLsn+4hJ
+ DhWowKgvldFoEdigVfs5+3RdlpoMw7QpUNFl9tMzuBcf/h6BZFphU/aT/GLpmThL
+ DwI0/ntBMgzfQo8Rv9Qhiihct+jh5lc6mRCg22AVS/oAwgtQ7kBJTKwkFstTwOpl
+ SxYOPUAfVToJFv7NbfgH006wvVfTQGfTZ1toftysVKrB76AnXBcIiLkO/RIV4rOg
+ NhP9AcB8xToVV4HIF+ESRcukYTG3X9krQNZnpB+suAa2TD5wmmoOZhHHGMtH2BOm
+ 6eQOkW35H5a4/HAXseAWIDcaWMwYmBlTB7fvOLxityIwPE1oiZApFASTW36GMD2r
+ N99xgcdgu2537pCjgJ/m9+i1VcyZhCe3y2lesUK6UUT8N8cUbok7IQG2SStJsSy0
+ 1OSSne+kQxsGKSm6jk4/nZisABFIt3gSJVvMLgFhgen+zTyQrPT7gxGen9xMv6j4
+ KpMjjJsJMkWMeGqssbymN8c40GDkQAMfjxLAkCTjiGwRfdW1x5H7WJaALepJ/wNe
+ v/gRnLJDirI5uY3ZCZEkBk5Y16wocDgimJSv6koLcox8AbDwR8E=
+ =OdEP
+ -----END PGP SIGNATURE-----
 
 ---
 export function calculate(expr) { try { return eval(expr.replace(/[^0-9+\-*/().]/g, '')); } catch { return 'Error'; } }
