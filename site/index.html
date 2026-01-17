@@ -10,7 +10,7 @@ title: Registry Index
 <tbody></tbody>
 </table>
 <script>
-fetch('https://raw.githubusercontent.com/bitcoreos/skills.md/main/swarm/index.json')
+fetch('./swarm/index.json')
 .then(r => r.json())
 .then(data => {
 const tbody = document.querySelector('#skillTable tbody');
