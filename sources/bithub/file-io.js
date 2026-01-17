@@ -6,21 +6,22 @@ version: 1.0.0
 signature: |
     -----BEGIN PGP SIGNATURE-----
     
-    iQIzBAABCgAdFiEEZ8U4LAM6MxGSR9xCicnEBsaHU18FAmlrArkACgkQicnEBsaH
-    U1+SMBAAk5IxqFMYIESYVOf0N7ZNGIIZVQ8Nc9F6UbVDjBaROEFBbQPf/CXLBlr4
-    UOcUONX8sUpqGphrOIxx5GxMhWnBZjblpwVmlgzOkpzxJxvpVfUYM+fLdjOeeXxj
-    sSykYAQpzGNZv+6+5qfJ6tCYIegPzXYl6ObleHAOD/rTYhjjjH1CanbrpitW50RX
-    IgR3PMC3LVcPb1Whx6em6/tUbMUtrglovDfIF29IFOfSDOq4yLkDl0+ScZrcGxki
-    IqRyv9ouukR05ba8kq9d+5SuXuqIZZiQcf38+qdBu8jGg9lO9CzQgLmGy1VUVulW
-    YgxAaM4yQmhmzGY+K5vf3J9Rr9DwSJriO8yVE8XVeMoo37O7AuMayWNUNKkF5vaT
-    WxAaPmt6vQJONjl9XkpS2FUoMMKTnihxPAdHZLi/uUCrU2liCaKE9Li6r55PEzGT
-    qRnDYWDv0FmFbHo74RQ4UnIWfRHXvHIyu1UF0hk2Y/Mbo8MmNF0GNChDtXV+Oq/x
-    Y2eMYvdc0BcXom1rt18bF7W9ocUmCSqk1iRIaV3uVMIOZlkZs7G0k08h31gXl+6Y
-    28ya2yW2u1sk6aH3lJd1bHcGbht5OMcTH+ElrjaxEsLDY53VZhmaODmeWLminReM
-    E1YJ40Lqy71cgm7lpfVCiq6sfcHFXfkeFR/LAvS74Vmgeh/fjqw=
-    =NaYk
+    iQIzBAABCgAdFiEEZ8U4LAM6MxGSR9xCicnEBsaHU18FAmlrA+cACgkQicnEBsaH
+    U18lCxAAgevw7oWt/1neN/KLqxL/6Xo9TfSaKt5l+ayBX//yQLxlO5c0NCCC4QYO
+    ff1/9GXYe/b4pRUldzsFSecaPDgsei+QXKzgRBUG6EiLvPTDD3I5GEH00/PlVtLj
+    cFOZYXm0A0zfhsYXlnPw6nPyYzivf2u9Etb7FwscVtwF4lMHKYVGN3xUEiH9R8yB
+    oZyC6kb/iaBSKzkndRwtZWiFOw15INQs9PPQXKYJ5kRZ3FFU8sunrKOO5rpRiW1y
+    gWYLABCiGoDDSNZjoYxUTOFAp2muUTOwkk1aV5x+eeB2x95XG1/AWOva+x/iZqpK
+    Um0UTxtSbZgMTjSg5ggwdyVRxtb2fythdwvgPaEa604W4T76ruiqjjFikmVb6xv4
+    pp1ukNSYPfhRbhvCUGrscz0uRqlsXCO+WBOIQZwIL2mnGb9Iyrw52zn7NfXVOgul
+    jYczGpNz+cV9T23mVhslP2FUGdrSWpabt2EPaPvgVLokk+Jc9aFeHeTgkcJCviS5
+    AHQHs0G0LEd1t5em85OONsrd6/G6+ossFuTfDHyoC3maNOE9vqoA9TEsIEFWQYzF
+    UJI8TnrOMLkBvP3alwDUT9vYgbYjBSHC2JhL+Dm/d6zFD1dq5XkmYCCpZPcygWyJ
+    c7MBL2FqKrHuo/jy2kUcP8nZVYx+LoyDSW6Fv2410UdPlxuq6JA=
+    =jcDE
     -----END PGP SIGNATURE-----
 
 ---
+/* global Deno */
 // Read file asynchronously
 export async function readFile(path) { return Deno.readTextFile(path); }
