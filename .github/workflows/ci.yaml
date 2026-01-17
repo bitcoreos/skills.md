@@ -67,11 +67,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install linters
-        run: npm install -g eslint prettier
+        run: npm ci
       - name: ESLint
-        run: eslint sources/**/*.js --max-warnings=0
+        run: npx eslint sources/**/*.js --max-warnings=0
       - name: Prettier
-        run: prettier --check sources/**/*.js
+        run: npx prettier --check sources/**/*.js
 
   embed:
     runs-on: ubuntu-latest
