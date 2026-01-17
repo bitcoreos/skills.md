@@ -18,6 +18,15 @@ def sign_skill(path):
     front = parts[0]
     code = parts[1]
 
+    # CLEANUP: Remove ALL existing PGP blocks and the signature key
+    # 1. Remove the signature key and its indented block
+    front = re.sub(r'signature: \|\n(    .*\n)*', '', front)
+    # 2. Remove any dangling PGP blocks (stale artifacts)
+    front = re.sub(r'-----BEGIN PGP SIGNATURE-----[\s\S]*?-----END PGP SIGNATURE-----', '', front)
+    # 3. Clean up multiple newlines left behind
+    front = re.sub(r'\n{3,}', '\n\n', front)
+
+    # Sign the code
     proc = subprocess.run(
         ['gpg', '--batch', '--yes', '--armor', '--detach-sign'],
         input=code.encode('utf-8'),
@@ -29,9 +38,8 @@ def sign_skill(path):
         sys.exit(1)
 
     sig = proc.stdout.decode('utf-8')
-    indented_sig = ''.join([' ' + line + '\n' for line in sig.splitlines()])
+    indented_sig = ''.join(['    ' + line + '\n' for line in sig.splitlines()])
 
-    front = re.sub(r'signature: \|\n( .*\n)*', '', front)
     new_front = front.strip() + '\n' + 'signature: |\n' + indented_sig
     new_content = new_front + '\n---\n' + code
 
