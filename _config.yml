@@ -1,3 +1,4 @@
 title: BITcore Skills Registry
 description: Swarm-native skill repository
 theme: jekyll-theme-slate
+baseurl: "/skills.md"
